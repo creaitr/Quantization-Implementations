@@ -3,9 +3,13 @@ import torch
 import torch.nn as nn
 from thop import profile #ptflops
 # packages
+import models as qmodels
 import classifier.models as models
+import datasets as qdatasets
 import classifier.datasets as datasets
 import classifier.utils as utils
+import quantization
+from utils import add_quant_arguments
 from classifier.utils import parse_arguments, add_arguments
 from classifier.utils import summarize_reports
 from classifier.train import Trainer, set_optimizer, set_lr_scheduler
@@ -15,17 +19,18 @@ from classifier.train import step_lr_epoch, step_lr_batch
 
 def main():
     # parse arguments
-    cfg = parse_arguments(funcs=[add_arguments])
+    cfg = parse_arguments(funcs=[add_arguments, add_quant_arguments])
     
     # get the name of a model
-    arch_name = models.utils.set_arch_name(cfg)
+    arch_name = qmodels.utils.set_arch_name(cfg)
 
     # set a logger
     logger = utils.Logger(cfg, arch_name)
 
     # construct a model
     logger.print('Building a model ...')
-    model, image_size = models.set_model(cfg)
+    quantizer = quantization.__dict__[cfg.quantization]
+    model, image_size = qmodels.set_model(cfg, quantizer.qnn)
     
     # profile the model
     input = torch.randn(1, 3, image_size, image_size)
@@ -38,7 +43,8 @@ def main():
     lr_scheduler = set_lr_scheduler(optimizer, cfg)
 
     # load dataset
-    loaders = datasets.set_dataset(cfg, image_size)
+    loaders = datasets.set_dataset(cfg, image_size,
+                                   hooks=[qdatasets.change_normalize])
 
     # set a trainer
     trainer = Trainer(cfg=cfg,
