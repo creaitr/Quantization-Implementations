@@ -1,0 +1,122 @@
+torch.Size([16, 3, 3, 3])
+tensor(0.0133, device='cuda:0')
+
+torch.Size([128, 16, 32, 32])
+tensor(0.0015, device='cuda:0')
+
+torch.Size([16, 16, 3, 3])
+tensor(0.0075, device='cuda:0')
+
+torch.Size([128, 16, 32, 32])
+tensor(0.0008, device='cuda:0')
+
+torch.Size([16, 16, 3, 3])
+tensor(0.0079, device='cuda:0')
+
+torch.Size([128, 16, 32, 32])
+tensor(0.0010, device='cuda:0')
+
+torch.Size([16, 16, 3, 3])
+tensor(0.0083, device='cuda:0')
+
+torch.Size([128, 16, 32, 32])
+tensor(0.0008, device='cuda:0')
+
+torch.Size([16, 16, 3, 3])
+tensor(0.0074, device='cuda:0')
+
+torch.Size([128, 16, 32, 32])
+tensor(0.0007, device='cuda:0')
+
+torch.Size([16, 16, 3, 3])
+tensor(0.0073, device='cuda:0')
+
+torch.Size([128, 16, 32, 32])
+tensor(0.0007, device='cuda:0')
+
+torch.Size([16, 16, 3, 3])
+tensor(0.0059, device='cuda:0')
+
+torch.Size([128, 16, 32, 32])
+tensor(0.0008, device='cuda:0')
+
+torch.Size([32, 16, 3, 3])
+tensor(0.0107, device='cuda:0')
+
+torch.Size([128, 32, 16, 16])
+tensor(0.0015, device='cuda:0')
+
+torch.Size([32, 32, 3, 3])
+tensor(0.0073, device='cuda:0')
+
+torch.Size([128, 32, 16, 16])
+tensor(0.0012, device='cuda:0')
+
+torch.Size([32, 16, 1, 1])
+tensor(0.0328, device='cuda:0')
+
+torch.Size([32, 32, 3, 3])
+tensor(0.0076, device='cuda:0')
+
+torch.Size([128, 32, 16, 16])
+tensor(0.0014, device='cuda:0')
+
+torch.Size([32, 32, 3, 3])
+tensor(0.0045, device='cuda:0')
+
+torch.Size([128, 32, 16, 16])
+tensor(0.0010, device='cuda:0')
+
+torch.Size([32, 32, 3, 3])
+tensor(0.0063, device='cuda:0')
+
+torch.Size([128, 32, 16, 16])
+tensor(0.0014, device='cuda:0')
+
+torch.Size([32, 32, 3, 3])
+tensor(0.0044, device='cuda:0')
+
+torch.Size([128, 32, 16, 16])
+tensor(0.0011, device='cuda:0')
+
+torch.Size([64, 32, 3, 3])
+tensor(0.0050, device='cuda:0')
+
+torch.Size([128, 64, 8, 8])
+tensor(0.0024, device='cuda:0')
+
+torch.Size([64, 64, 3, 3])
+tensor(0.0040, device='cuda:0')
+
+torch.Size([128, 64, 8, 8])
+tensor(0.0025, device='cuda:0')
+
+torch.Size([64, 32, 1, 1])
+tensor(0.0089, device='cuda:0')
+
+torch.Size([64, 64, 3, 3])
+tensor(0.0041, device='cuda:0')
+
+torch.Size([128, 64, 8, 8])
+tensor(0.0041, device='cuda:0')
+
+torch.Size([64, 64, 3, 3])
+tensor(0.0034, device='cuda:0')
+
+torch.Size([128, 64, 8, 8])
+tensor(0.0018, device='cuda:0')
+
+torch.Size([64, 64, 3, 3])
+tensor(0.0036, device='cuda:0')
+
+torch.Size([128, 64, 8, 8])
+tensor(0.0023, device='cuda:0')
+
+torch.Size([64, 64, 3, 3])
+tensor(0.0044, device='cuda:0')
+
+torch.Size([128, 64, 8, 8])
+tensor(0.0005, device='cuda:0')
+
+torch.Size([100, 64])
+tensor(0.0105, device='cuda:0')

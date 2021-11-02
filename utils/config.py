@@ -18,3 +18,7 @@ def add_quant_arguments(parser):
                         help="Bit-width for weights of the last fc layer")
     parser.add_argument('--symmetric', default=False, action='store_true',
                         help='symmetric or not for the quantization of weights and activations')
+
+    parser.add_argument("--lsq-ewgs-fsh-k", type=float, default=100.,
+                        help="Hyperparameter k for the lsq-ewgs-fsh method")
+                        

@@ -1,0 +1,1 @@
+python main.py --arch resnet --savepath lsq_ewgs_fsh 5bit $1 --lsq-ewgs-fsh-k 100. --load logs/resnet-20/cifar100/fp/$1/best.pth -Q lsq_ewgs_fsh --bitw 5 --bita 5 --wd 5e-4 --lr 0.01 --epochs 5
