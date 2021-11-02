@@ -1,7 +1,7 @@
 # torch
 import torch
 import torch.nn as nn
-from thop import profile #ptflops
+#from thop import profile #ptflops
 # packages
 import models as qmodels
 import classifier.models as models
@@ -33,9 +33,9 @@ def main():
     model, image_size = qmodels.set_model(cfg, quantizer.qnn)
     
     # profile the model
-    input = torch.randn(1, 3, image_size, image_size)
-    macs, params = profile(model, inputs=(input, ), verbose=False)
-    logger.print(f'Name: {arch_name}    (Params: {int(params)}, FLOPs: {int(macs)})')
+    #input = torch.randn(1, 3, image_size, image_size)
+    #macs, params = profile(model, inputs=(input, ), verbose=False)
+    #logger.print(f'Name: {arch_name}    (Params: {int(params)}, FLOPs: {int(macs)})')
     
     # set other options
     criterion = nn.CrossEntropyLoss()
@@ -69,6 +69,9 @@ def main():
             trainer.register_hooks(loc='after_batch', func=[step_lr_batch])
         trainer.register_hooks(loc='after_epoch', func=[save_train, summarize_reports])
 
+        if hasattr(quantizer, 'add_hooks'):
+            quantizer.add_hooks(trainer)
+        
         trainer.train()
 
     elif cfg.run_type == 'validate':
